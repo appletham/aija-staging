@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+openai
+pydantic
+python-dotenv
+gspread
+gspread-dataframe
+google-api-python-client
+google-auth
