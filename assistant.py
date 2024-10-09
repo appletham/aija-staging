@@ -231,7 +231,7 @@ class OpenAIClient:
                         logging.info("Calling function %s with arguments: %s", tool.function.name,
                                      tool.function.arguments)
                     except Exception as e:
-                        logging.error("Failed to execute function %s: %s", tool.function.name, e)
+                        logging.error("Failed to execute function %s: %s", tool.function.name, e, tool.function.arguments)
         return tool_outputs
 
     def _get_final_message_content(self, run):
