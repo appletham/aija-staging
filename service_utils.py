@@ -1,4 +1,5 @@
 from googleapiclient.discovery import build
+import streamlit as st
 import gspread
 from gspread_dataframe import get_as_dataframe
 from google.oauth2.service_account import Credentials
@@ -23,7 +24,7 @@ def get_google_creds_and_service(service_name=None, version=None):
         "https://www.googleapis.com/auth/drive",
         "https://www.googleapis.com/auth/spreadsheets"
     ]
-    google_sheet_key_dict = json.loads(os.getenv("TEXTKEY"))
+    google_sheet_key_dict = json.loads(st.secrets["TEXTKEY"])
     creds = Credentials.from_service_account_info(google_sheet_key_dict, scopes=google_sheet_scopes)
 
     if service_name and version:
